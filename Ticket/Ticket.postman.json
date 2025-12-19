@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "2db4e79b-0831-49f5-9f82-8481efdc31d0",
+		"name": "Ticket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49335371",
+		"_collection_link": "https://afshinheydaripost9-334044.postman.co/workspace/MicroService~d1ea9939-9ef2-42a7-81a7-3928759f1e60/collection/49335371-2db4e79b-0831-49f5-9f82-8481efdc31d0?action=share&source=collection_link&creator=49335371"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Email\": \"admin\",\r\n  \"Password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5167/Ticket/User/Login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5167",
+					"path": [
+						"Ticket",
+						"User",
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FullName\":\"Afshin Heydari\",\r\n    \"Email\":\"Afshin.Heydari.post@gmail.com\",\r\n    \"PhoneNumber\":\"09199342307\",\r\n    \"Role\":\"Admin\",\r\n    \"Password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5167/api/User/Create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5167",
+					"path": [
+						"api",
+						"User",
+						"Create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateTicket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"Title\":\"Title\",\r\n\"Description\":\"Description\",\r\n\"Priority\":\"Medium\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5167/api/Tickets/Create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5167",
+					"path": [
+						"api",
+						"Tickets",
+						"Create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MyTicketsList",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtcGxveWVlQHRlc3QuY29tIiwiVXNlckNvZGUiOiJUZXN0IEVtcGxveWVlIiwiVXNlcklkIjoiOGUyYjQ4YTIzNDYzNDMwYmJmNmI5YzdmYjlkNDZiNDUiLCJyb2xlIjoiVXNlciIsIm5iZiI6MTc2NjE0MDA4NywiZXhwIjoxNzY2MjI2NDg3LCJpYXQiOjE3NjYxNDAwODcsImlzcyI6IkF1dGhTZXJ2aWNlIiwiYXVkIjoiQXBpQ2xpZW50cyJ9.mIguwA3KoNCEyLXFRJo9C-QhDIsiM07VyKvkSBfrcSE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5167/api/Tickets/My",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5167",
+					"path": [
+						"api",
+						"Tickets",
+						"My"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetItem",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "AllTicketsListForAdmin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "MyTicketsList",
+					"host": [
+						"MyTicketsList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5167/Tickets/025568966b61458fb0be2da63e15e32a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5167",
+					"path": [
+						"Tickets",
+						"025568966b61458fb0be2da63e15e32a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "stats",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "UPdateAssignedToUser",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiVXNlckNvZGUiOiJTeXN0ZW0gQWRtaW4iLCJVc2VySWQiOiIyZWQ5ZGNhOTM5OWQ0YjA3OWFjMjQyZDg0YWQ4MjBhNCIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTc2NjE0NDAxNSwiZXhwIjoxNzY2MjMwNDE1LCJpYXQiOjE3NjYxNDQwMTUsImlzcyI6IkF1dGhTZXJ2aWNlIiwiYXVkIjoiQXBpQ2xpZW50cyJ9.ccrgraOYx6327I2pGm0QAzqOZp0knOAu8fZkluV7Dc4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"InProgress\",\r\n    \"assignedToUserId\": \"2ed9dca9399d4b079ac242d84ad820a4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5167/tickets/462d840b696a4580bd1cb79c922b03c8e4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5167",
+					"path": [
+						"tickets",
+						"462d840b696a4580bd1cb79c922b03c8e4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
